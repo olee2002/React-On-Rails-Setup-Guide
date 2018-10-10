@@ -17,13 +17,14 @@ React on Rails setup guide
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
-    "node": "8.7.0"
+    "node": "8.7.0" # or latest and greatest version of node. 8.7.0 is already old at the time of this README. ;(
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   }
+  # copy and paste above into your file, I tried to type at times, never successful for some reasons.
 }
 
     #this is for the static build file in production similar to the postinstall script in express.
@@ -41,7 +42,7 @@ React on Rails setup guide
 ```
 ```
 6. gem install foreman
-    # this is the Ruby version of concurrently
+    # this is the Ruby version of concurrently (being able to run two servers on one)
 ```
 ```
 7. create Procfile.dev in the root folder and add below,
@@ -52,10 +53,10 @@ React on Rails setup guide
 8. bundle install (npm install express version)
 ```
 ```
-9. foreman start -f Procfile.dev
+9. foreman start -f Procfile.dev (Procfile is also important when you deploy it to Heroku)
 ```
 ```
-gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
 ```
 ```
   host: <%=ENV['DATABASE_HOST']%>
@@ -64,7 +65,16 @@ gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
   password: <%=ENV["DATABASE_PASSWORD"]%>
 ```
 ```
+rails g model Model name:string
+rails g model SubModel model:references
+rails g controller Name 
+```
+```
+bundle exec rake db:create && bundle exec rake db:migrate (create database and run migration check migration before running this)
+```
+```
 React on Rails Heroku Deployment
+--------------------------------------------------------------------------------------------------------
 1.heroku create YOUR-APP-NAME
     #WARNING!!! Be sure to replace "YOUR_APP_NAME" above with the project name from your package.json.
 2.heroku buildpacks:add --index 1 heroku/ruby
@@ -75,12 +85,6 @@ web: rails s
 5. heroku run rails db:migrate db:seed
 6. heroku run rails c
 in case it doesnt work try heroku addons:create heroku-postgresql:hobby-dev
+--------------------------------------------------------------------------------------------------------
 ```
-```
-rails g model Model name:string
-rails g model SubModel model:references
-rails g controller Name 
-```
-```
-bundle exec rake db:create && bundle exec rake db:migrate
-```
+
