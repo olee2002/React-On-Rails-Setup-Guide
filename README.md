@@ -17,7 +17,8 @@ React on Rails setup guide
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
-    "node": "8.7.0" # or latest and greatest version of node. 8.7.0 is already old at the time of this README. ;(
+    "node": "8.7.0" 
+    # or latest and greatest version of node. 8.7.0 is already old at the time of this README. ;(
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
@@ -27,7 +28,7 @@ React on Rails setup guide
   # copy and paste above into your file, I tried to type at times, never successful for some reasons.
 }
 
-    #this is for the static build file in production similar to the postinstall script in express.
+  #this is for the static build file in production similar to the postinstall script in express.
 ```
 ```
 5. add ("proxy": "http://localhost:3001",) the package json file in the client folder
@@ -38,7 +39,7 @@ React on Rails setup guide
   "proxy": "http://localhost:3001",
   ...
 }
-    #This sets up the ability to call our Rails API without directly referencing localhost:3001
+   #This sets up the ability to call our Rails API without directly referencing localhost:3001
 ```
 ```
 6. gem install foreman
@@ -56,7 +57,7 @@ React on Rails setup guide
 9. foreman start -f Procfile.dev (Procfile is also important when you deploy it to Heroku)
 ```
 ```
-gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
+   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
 ```
 ```
   host: <%=ENV['DATABASE_HOST']%>
@@ -70,7 +71,8 @@ rails g model SubModel model:references
 rails g controller Name 
 ```
 ```
-bundle exec rake db:create && bundle exec rake db:migrate (create database and run migration check migration before running this)
+bundle exec rake db:create && bundle exec rake db:migrate 
+  #create database and run migration check migration before running this
 ```
 ```
 React on Rails Heroku Deployment
@@ -78,7 +80,7 @@ React on Rails Heroku Deployment
 1.heroku create YOUR-APP-NAME
     #WARNING!!! Be sure to replace "YOUR_APP_NAME" above with the project name from your package.json.
 2.heroku buildpacks:add --index 1 heroku/ruby
-heroku buildpacks:add --index 2 heroku/nodejs
+  heroku buildpacks:add --index 2 heroku/nodejs
 3. create Procfile and add below
     web: rails s
 4. git push heroku master
