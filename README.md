@@ -54,3 +54,12 @@ React on Rails setup guide
 ```
 9. foreman start -f Procfile.dev
 ```
+```
+gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+```
+```
+  host: <%=ENV['DATABASE_HOST']%>
+  database: <%=ENV["DATABASE_NAME"]%>
+  username: <%=ENV["DATABASE_USER"]%>
+  password: <%=ENV["DATABASE_PASSWORD"]%>
+```
