@@ -42,8 +42,14 @@ React on Rails setup guide
    #This sets up the ability to call our Rails API without directly referencing localhost:3001
 ```
 ```
+cd client/ npm i axios
+```
+```
 6. gem install foreman
     # this is the Ruby version of concurrently (being able to run two servers on one)
+```
+```
+   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
 ```
 ```
 7. create Procfile.dev in the root folder and add below,
@@ -55,9 +61,6 @@ React on Rails setup guide
 ```
 ```
 9. foreman start -f Procfile.dev (Procfile is also important when you deploy it to Heroku)
-```
-```
-   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
 ```
 ```
   host: <%=ENV['DATABASE_HOST']%>
