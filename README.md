@@ -1,4 +1,4 @@
-# React-On-Rails-Setup-Guide
+# React-On-Rails-Setup-Guide (Create-React-App)
 
 React on Rails setup guide
 ```
