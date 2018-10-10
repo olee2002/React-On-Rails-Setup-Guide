@@ -80,7 +80,7 @@ React on Rails Heroku Deployment
 2.heroku buildpacks:add --index 1 heroku/ruby
 heroku buildpacks:add --index 2 heroku/nodejs
 3. create Procfile and add below
-web: rails s
+    web: rails s
 4. git push heroku master
 5. heroku addons:create heroku-postgresql:hobby-dev
 6. heroku run rails db:migrate db:seed
