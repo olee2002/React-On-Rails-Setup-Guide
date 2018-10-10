@@ -82,9 +82,9 @@ heroku buildpacks:add --index 2 heroku/nodejs
 3. create Procfile and add below
 web: rails s
 4. git push heroku master
-5. heroku run rails db:migrate db:seed
-6. heroku run rails c
-in case it doesnt work try heroku addons:create heroku-postgresql:hobby-dev
+5. heroku addons:create heroku-postgresql:hobby-dev
+6. heroku run rails db:migrate db:seed
+7. heroku run rails c
 --------------------------------------------------------------------------------------------------------
 ```
 
