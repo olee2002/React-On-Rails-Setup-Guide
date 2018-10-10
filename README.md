@@ -25,7 +25,7 @@ React on Rails setup guide
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   }
-  # copy and paste above into your file, I tried to type at times, never successful for some reasons.
+  # copy and paste the above, I tried to type a few times, never successful for some reasons.
 }
 
   #this is for the static build file in production similar to the postinstall script in express.
