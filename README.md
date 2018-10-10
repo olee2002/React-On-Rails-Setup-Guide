@@ -76,3 +76,11 @@ web: rails s
 6. heroku run rails c
 in case it doesnt work try heroku addons:create heroku-postgresql:hobby-dev
 ```
+```
+rails g model Model name:string
+rails g model SubModel model:references
+rails g controller Name 
+```
+```
+bundle exec rake db:create && bundle exec rake db:migrate
+```
