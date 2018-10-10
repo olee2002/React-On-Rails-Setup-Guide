@@ -63,3 +63,16 @@ gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
   username: <%=ENV["DATABASE_USER"]%>
   password: <%=ENV["DATABASE_PASSWORD"]%>
 ```
+```
+React on Rails Heroku Deployment
+1.heroku create YOUR-APP-NAME
+    #WARNING!!! Be sure to replace "YOUR_APP_NAME" above with the project name from your package.json.
+2.heroku buildpacks:add --index 1 heroku/ruby
+heroku buildpacks:add --index 2 heroku/nodejs
+3. create Procfile and add below
+web: rails s
+4. git push heroku master
+5. heroku run rails db:migrate db:seed
+6. heroku run rails c
+in case it doesnt work try heroku addons:create heroku-postgresql:hobby-dev
+```
