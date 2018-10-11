@@ -17,7 +17,7 @@ React on Rails setup guide
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
-    "node": "8.7.0" 
+    "node": "10.11.0" 
     # or latest and greatest version of node. 8.7.0 is already old at the time of this README. ;(
   },
   "scripts": {
