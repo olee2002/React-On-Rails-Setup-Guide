@@ -42,7 +42,7 @@ React on Rails setup guide
    #This sets up the ability to call our Rails API without directly referencing localhost:3001
 ```
 ```
-cd client/ npm i axios
+cd client/ npm i axios react-router-dom
 ```
 ```
 6. gem install foreman
@@ -63,6 +63,14 @@ cd client/ npm i axios
 9. foreman start -f Procfile.dev (Procfile is also important when you deploy it to Heroku)
 ```
 ```
+  for remote database with ENV setting
+  .env
+  DATABASE_HOST=
+  DATABASE_NAME=
+  DATABASE_USER=
+  DATABASE_PORT=
+  DATABASE_PASSWORD=
+  In database.yml
   host: <%=ENV['DATABASE_HOST']%>
   database: <%=ENV["DATABASE_NAME"]%>
   username: <%=ENV["DATABASE_USER"]%>
@@ -72,7 +80,15 @@ cd client/ npm i axios
 rails g model Model name:string
 rails g model SubModel model:references
 rails g controller api/Name 
+
+Add has_many, dependent: :destroy(this might conflict with seeding)
+
 ```
+```
+Add below to index.html if you use bootstrap (makes life easier)
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+```
+
 ```
 bundle exec rake db:create && bundle exec rake db:migrate 
   #create database and run migration check migration before running this
