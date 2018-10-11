@@ -18,7 +18,6 @@ React on Rails setup guide
   "name": "YOUR PROJECT NAME",
   "engines": {
     "node": "10.11.0" 
-    # or latest and greatest version of node. 8.7.0 is already old at the time of this README. ;(
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
@@ -77,11 +76,14 @@ cd client/ npm i axios react-router-dom
   password: <%=ENV["DATABASE_PASSWORD"]%>
 ```
 ```
+basic model & controller creation with rails CLI
 rails g model Model name:string
 rails g model SubModel model:references
 rails g controller api/Name 
 
-Add has_many, dependent: :destroy(this might conflict with seeding)
+Date.parse(‘15 Jan  1975’) - example for date data type
+
+Add has_many, dependent: :destroy(in the parent model, this might conflict with seeding)
 
 ```
 ```
@@ -92,6 +94,8 @@ Add below to index.html if you use bootstrap (makes life easier)
 ```
 bundle exec rake db:create && bundle exec rake db:migrate 
   #create database and run migration check migration before running this
+netstat -ant | grep 3000
+rails server -p 3001 (just testing api only)
 ```
 ```
 React on Rails Heroku Deployment
