@@ -71,7 +71,7 @@ cd client/ npm i axios
 ```
 rails g model Model name:string
 rails g model SubModel model:references
-rails g controller Name 
+rails g controller api/Name 
 ```
 ```
 bundle exec rake db:create && bundle exec rake db:migrate 
