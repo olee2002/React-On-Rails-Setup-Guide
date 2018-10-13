@@ -30,9 +30,8 @@ React on Rails setup guide
   #this is for the static build file in production similar to the postinstall script in express.
 ```
 ```
-5. cd client/ npm i axios react-router-dom 
-
-add ("proxy": "http://localhost:3001",) to package.json in client
+5. cd client/ 
+1) add ("proxy": "http://localhost:3001",) to package.json in client
 {
   "name": "client",
   "version": "0.1.0",
@@ -41,6 +40,11 @@ add ("proxy": "http://localhost:3001",) to package.json in client
   ...
 }
    #This sets up the ability to call our Rails API without directly referencing localhost:3001
+
+2)npm i axios react-router-dom (optional)
+
+** Add below to index.html if you use bootstrap (optional: makes life easier)
+3)<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
 ```
 6. gem install foreman
@@ -99,11 +103,6 @@ end
 ```
 ```
 13.Seed data / rake db:migrate (test each route one by one as you go)
-```
-
-```
-** Add below to index.html if you use bootstrap (makes life easier)
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
 ```
 netstat -ant | grep 3000
