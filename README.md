@@ -13,7 +13,7 @@ React on Rails setup guide
 3. create-react-app client
 ```
 ```
-4. create a package.json at the root folder and add below 
+4. create a package.json (npm init) in root(rails) and add below 
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
