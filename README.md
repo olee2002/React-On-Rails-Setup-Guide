@@ -30,7 +30,7 @@ React on Rails setup guide
   #this is for the static build file in production similar to the postinstall script in express.
 ```
 ```
-5. add ("proxy": "http://localhost:3001",) the package json file in the client folder
+5. add ("proxy": "http://localhost:3001",) to package json in client
 {
   "name": "client",
   "version": "0.1.0",
@@ -41,7 +41,7 @@ React on Rails setup guide
    #This sets up the ability to call our Rails API without directly referencing localhost:3001
 ```
 ```
-cd client/ npm i axios react-router-dom
+cd client/ npm i axios react-router-dom 
 ```
 ```
 6. gem install foreman
@@ -81,14 +81,12 @@ rails g model Model name:string
 rails g model SubModel model:references
 rails g controller api/Name 
 
-
 Add has_many, dependent: :destroy(in the parent model, this might conflict with seeding)
 ```
 ```
 11,bundle exec rake db:create && bundle exec rake db:migrate 
   #create database and run migration check migration before running this
 ```
-
 ```
 12.Seed data / rake db:migrate (check one by one as you go)
 ```
@@ -96,7 +94,6 @@ Add has_many, dependent: :destroy(in the parent model, this might conflict with 
 ** Add below to index.html if you use bootstrap (makes life easier)
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
-
 ```
 netstat -ant | grep 3000
 rails server -p 3001 (just testing api only)
@@ -116,4 +113,3 @@ React on Rails Heroku Deployment
 7. heroku run rails c
 --------------------------------------------------------------------------------------------------------
 ```
-
