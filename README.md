@@ -90,7 +90,7 @@ Add has_many, dependent: :destroy(in the parent model, this might conflict with 
 ```
 
 ```
-12.Seed data
+12.Seed data / rake db:migrate (check one by one as you go)
 ```
 ```
 ** Add below to index.html if you use bootstrap (makes life easier)
