@@ -30,7 +30,9 @@ React on Rails setup guide
   #this is for the static build file in production similar to the postinstall script in express.
 ```
 ```
-5. add ("proxy": "http://localhost:3001",) to package json in client
+5. cd client/ npm i axios react-router-dom 
+
+add ("proxy": "http://localhost:3001",) to package json in client
 {
   "name": "client",
   "version": "0.1.0",
@@ -39,9 +41,6 @@ React on Rails setup guide
   ...
 }
    #This sets up the ability to call our Rails API without directly referencing localhost:3001
-```
-```
-cd client/ npm i axios react-router-dom 
 ```
 ```
 6. gem install foreman
