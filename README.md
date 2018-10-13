@@ -56,13 +56,13 @@ cd client/ npm i axios react-router-dom
     api: rails s -p 3001
 ```
 ```
-8. bundle install (npm install express version)
+8. bundle install  & npm install 
 ```
 ```
 9. foreman start -f Procfile.dev (Procfile is also important when you deploy it to Heroku)
 ```
 ```
-  for remote database with ENV setting
+ ** for remote database with ENV setting
   .env
   DATABASE_HOST=
   DATABASE_NAME=
@@ -76,24 +76,28 @@ cd client/ npm i axios react-router-dom
   password: <%=ENV["DATABASE_PASSWORD"]%>
 ```
 ```
-basic model & controller creation with rails CLI
+10, basic model & controller creation with rails CLI
 rails g model Model name:string
 rails g model SubModel model:references
 rails g controller api/Name 
 
-Date.parse(‘15 Jan  1975’) - example for date data type
 
 Add has_many, dependent: :destroy(in the parent model, this might conflict with seeding)
+```
+```
+11,bundle exec rake db:create && bundle exec rake db:migrate 
+  #create database and run migration check migration before running this
+```
 
 ```
+12.Seed data
 ```
-Add below to index.html if you use bootstrap (makes life easier)
+```
+** Add below to index.html if you use bootstrap (makes life easier)
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
 
 ```
-bundle exec rake db:create && bundle exec rake db:migrate 
-  #create database and run migration check migration before running this
 netstat -ant | grep 3000
 rails server -p 3001 (just testing api only)
 ```
