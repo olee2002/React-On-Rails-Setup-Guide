@@ -31,9 +31,9 @@ React on Rails setup (step by step) guide
 3)<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
 ```
-back onto root (rails)
+5. cd .. /back onto root (rails)
 
-5. create a package.json (npm init) in root(rails) and add below 
+create a package.json (npm init) in root(rails) and add below 
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
