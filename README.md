@@ -1,6 +1,7 @@
 # React-On-Rails-Setup-Guide (Create-React-App)
 
 React on Rails setup guide
+
 ```
 1.rails new FOLDERNAME --api  -T -d postgresql ( if mysql do mysql)
     #--api stripped down version of Ruby on the rail (excludes views)
