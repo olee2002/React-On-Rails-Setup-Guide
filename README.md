@@ -52,9 +52,9 @@ create a package.json (npm init) in root(rails) and add below
 ```
 6. gem install foreman
     # this is the Ruby version of concurrently (being able to run two servers on one)
-```
-```
-   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your env variables)
+#check your database in gem file
+gem "pg" (or "mysql2" not "sqlite3" ) 
+gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your env variables)
 ```
 ```
 7. create Procfile.dev in the root folder and add below,
