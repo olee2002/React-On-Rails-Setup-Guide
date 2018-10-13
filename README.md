@@ -14,24 +14,7 @@ React on Rails setup (step by step) guide
 3. create-react-app client
 ```
 ```
-4. create a package.json (npm init) in root(rails) and add below 
-{
-  "name": "YOUR PROJECT NAME",
-  "engines": {
-    "node": "10.11.0" 
-  },
-  "scripts": {
-    "build": "cd client && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
-  }
-  # copy and paste the above, I tried to type a few times, never successful for some reasons.
-}
-
-  #this is for the static build file in production similar to the postinstall script in express.
-```
-```
-5. cd client/ 
+4. cd client/ 
 1) add ("proxy": "http://localhost:3001",) to package.json in client
 {
   "name": "client",
@@ -46,6 +29,25 @@ React on Rails setup (step by step) guide
 
 ** Add below to index.html if you use bootstrap (optional: makes life easier)
 3)<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+```
+```
+back onto root (rails)
+
+5. create a package.json (npm init) in root(rails) and add below 
+{
+  "name": "YOUR PROJECT NAME",
+  "engines": {
+    "node": "10.11.0" 
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  }
+  # copy and paste the above, I tried to type a few times, never successful for some reasons.
+}
+
+  #this is for the static build file in production similar to the postinstall script in express.
 ```
 ```
 6. gem install foreman
