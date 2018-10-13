@@ -85,6 +85,8 @@ Add has_many, dependent: :destroy(in the parent model, this might conflict with 
 ```
 11,bundle exec rake db:create && bundle exec rake db:migrate 
   #create database and run migration check migration before running this
+  for local database rake db:create is required 
+  (creating database but for remote, typically the database is already created so run db:migrate)
 ```
 ```
 12.create routes 
