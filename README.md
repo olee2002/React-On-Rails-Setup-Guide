@@ -32,7 +32,7 @@ React on Rails setup guide
 ```
 5. cd client/ npm i axios react-router-dom 
 
-add ("proxy": "http://localhost:3001",) to package json in client
+add ("proxy": "http://localhost:3001",) to package.json in client
 {
   "name": "client",
   "version": "0.1.0",
@@ -47,7 +47,7 @@ add ("proxy": "http://localhost:3001",) to package json in client
     # this is the Ruby version of concurrently (being able to run two servers on one)
 ```
 ```
-   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your variables)
+   gem "dotenv-rails", "~> 2.1", ">= 2.1.1" (If you use dotenv for your env variables)
 ```
 ```
 7. create Procfile.dev in the root folder and add below,
@@ -87,8 +87,18 @@ Add has_many, dependent: :destroy(in the parent model, this might conflict with 
   #create database and run migration check migration before running this
 ```
 ```
-12.Seed data / rake db:migrate (check one by one as you go)
+12.create routes 
+
+namespace :api do
+resources models do
+resources sub-models
+ end
+end
 ```
+```
+13.Seed data / rake db:migrate (test each route one by one as you go)
+```
+
 ```
 ** Add below to index.html if you use bootstrap (makes life easier)
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
